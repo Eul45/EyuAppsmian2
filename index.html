@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EyuApps</title>
+    <!-- Meta tags for SEO and Social Media previews -->
+    <meta property="og:title" content="EyuApps">
+    <meta property="og:description" content="Discover and download fun/cool android apps across various categories, all developed by Eyuel Engida">
+    <meta property="og:image" content="https://raw.githubusercontent.com/Eul38/EyuAppsmain/main/images/preview-image.jpg">
+    <meta property="og:url" content="https://eyuapps.neocities.org">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="EyuApps">
+    <meta name="twitter:description" content="Discover and download fun/cool android apps across various categories, all developed by Eyuel Engida">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/Eul38/EyuAppsmain/main/images/preview-image.jpg">
+
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content img {
+    width: 270px; /* Maintain aspect ratio */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 90vw; /* Fit within 90% of the viewport width */
+    max-height: 90vh; /* Fit within 90% of the viewport height */
+    object-fit: contain; /* Ensure the entire image is visible */
+}
+
+
+
+
+        .modal-content img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .close-button, .prev-button, .next-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.5);
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        .close-button {
+            right: 10px;
+            top: 10px;
+            transform: none;
+        }
+
+        .prev-button {
+            left: 10px;
+        }
+
+        .next-button {
+            right: 10px;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800 font-poppins">
+
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-purple-600 to-pink-400 text-white py-6 shadow-md fixed w-full z-50 border-b-4 border-pink-300">
+        <div class="container mx-auto flex flex-col items-center px-6">
+            <h1 class="text-4xl font-bold flex items-center mb-4">
+                <img src="images/logo.png" alt="Logo" class="rounded-full mr-2" style="width: 30px; height: 30px;">
+                EyuApps
+            </h1>
+            <nav>
+                <ul class="flex space-x-6 text-lg font-semibold">
+                    <li><a href="#games" class="hover:text-pink-200 transition duration-300">Games</a></li>
+                    <li><a href="#tools" class="hover:text-pink-200 transition duration-300">Tools</a></li>
+                    <li><a href="#socials" class="hover:text-pink-200 transition duration-300">Socials</a></li>
+                    <li><a href="#education" class="hover:text-pink-200 transition duration-300">Education</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero bg-gradient-to-r from-purple-500 to-pink-300 text-white py-24 flex items-center justify-center min-h-screen relative overflow-hidden">
+        <div class="text-center px-4">
+            <h2 class="text-6xl font-bold mb-4 animate__animated animate__fadeInDown">Welcome to EyuApps</h2>
+            <p class="text-2xl mb-8 animate__animated animate__fadeInUp animate__delay-1s">Discover and download fun/cool android apps across various categories, all developed by Eyuel Engida.</p>
+            <a href="#games" class="bg-white text-purple-500 px-6 py-3 rounded-full text-lg font-semibold hover:bg-gray-200 transition-colors duration-300 get-started">Get Started <i class="fa-solid fa-download fa-beat"></i></a>
+        </div>
+        <div class="absolute top-0 left-0 w-24 h-24 bg-white rounded-full opacity-20 animate-float"></div>
+        <div class="absolute bottom-10 right-10 w-20 h-20 bg-white rounded-full opacity-20 animate-float animation-delay-2000"></div>
+    </section>
+
+    <!-- App Categories -->
+    <section id="games" class="category py-16 bg-white">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold mb-8 text-center text-purple-700">Games</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Example App -->
+                <div class="app bg-gray-100 p-6 rounded-lg shadow-lg transition transform hover:scale-105 flex flex-col justify-center h-full">
+                    <div class="text-center mt-4">
+                        <img style="max-width: 20%; height: auto; margin: 0 auto; border-radius: 15px;" src="images/guess.png" alt="Game 1">
+                        <h3 class="text-2xl font-bold mb-2">Guess</h3>
+                        <p class="mb-4">Exciting number guessing game.</p>
+                    </div>
+                    <div class="flex justify-between mt-4" style="margin-top: auto;">
+                        <a href="downloads/Guess.apk" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors duration-300">Download</a>
+                        <button class="bg-gradient-to-r from-purple-500 to-pink-700 text-white px-4 py-2 rounded hover:from-pink-700 hover:to-purple-500 transition-colors duration-300 preview-button" data-modal="modal-guess">Preview</button>
+                    </div>
+                </div>
+                
+                
+
+                <!-- Preview Modal for Guess -->
+                <div id="modal-guess" class="modal">
+                    <div class="modal-content">
+                        <button class="close-button">&times;</button>
+                        <button class="prev-button">&lsaquo;</button>
+                        <img src="images/guess_preview1.jpg" alt="Preview 1">
+                        <button class="next-button">&rsaquo;</button>
+                    </div>
+                </div>
+
+                <div class="app bg-gray-100 p-6 rounded-lg shadow-lg transition transform hover:scale-105">
+                    <img style="max-width: 20%; height: auto; display:block; margin: 0 auto; border-radius: 15px;" src="images/game.png" alt="Game 2">
+                    <h3 class="text-2xl font-bold mb-2">Snake3</h3>
+                    <p class="mb-4">A fun snake game.</p>
+                    <label for="snake3-version">Select Version:</label>
+                    <select id="snake3-version" class="version-select" style="padding: 8px 12px; border-radius: 4px; border: 1px solid #4CAF50; background-color: #f9f9f9; font-family: Arial, sans-serif; font-size: 14px;">
+                        <option value="downloads/snake_v4.apk">Version 4 (13.95 mb)</option>
+                        <option value="downloads/Snake3_v3.apk">Version 3 (12.7 mb)</option>
+                    </select>
+                    <br>
+                    <br>
+                    <div class="flex justify-between">
+                        <a id="snake3-download-btn" href="downloads/snake_v4.apk" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors duration-300">Download</a>
+                        <button class="bg-gradient-to-r from-purple-500 to-pink-700 text-white px-4 py-2 rounded hover:from-pink-700 hover:to-purple-500 transition-colors duration-300 preview-button" data-modal="modal-snake3">Preview</button>
+                    </div>
+                </div>
+
+                <!-- Preview Modal for Snake3 -->
+                <div id="modal-snake3" class="modal">
+                    <div class="modal-content">
+                        <button class="close-button">&times;</button>
+                        <button class="prev-button">&lsaquo;</button>
+                        <img src="images/snake3_preview1.jpg" alt="Preview 1">
+                        <button class="next-button">&rsaquo;</button>
+                    </div>
+                </div>
+                <!-- Example 2App -->
+<div class="app bg-gray-100 p-6 rounded-lg shadow-lg transition transform hover:scale-105 flex flex-col justify-center h-full">
+    <div class="text-center mt-4">
+        <img style="max-width: 20%; height: auto; margin: 0 auto; border-radius: 15px;" src="images/rps.png" alt="Game 1">
+        <h3 class="text-2xl font-bold mb-2">RPS</h3>
+        <p class="mb-4">Advanced rock paper scissor game with the computer.</p>
+    </div>
+    <div class="flex justify-between mt-4" style="margin-top: auto;">
+        <a href="downloads/RPS.apk" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors duration-300">Download</a>
+        <button class="bg-gradient-to-r from-purple-500 to-pink-700 text-white px-4 py-2 rounded hover:from-pink-700 hover:to-purple-500 transition-colors duration-300 preview-button" data-modal="modal-rps">Preview</button>
+    </div>
+</div>
+
+            
+                <!-- Preview Modal for RPS -->
+                <div id="modal-rps" class="modal">
+                    <div class="modal-content">
+                        <button class="close-button">&times;</button>
+                        <button class="prev-button">&lsaquo;</button>
+                        <img src="images/rps_preview1.jpg" alt="Preview 1">
+                        <button class="next-button">&rsaquo;</button>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </section>
+
+
+                
+
+    <section id="tools" class="category py-16 bg-gray-100">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold mb-8 text-center text-purple-700">Tools</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!--  App1 -->
+                <div class="app bg-white p-6 rounded-lg shadow-lg transition transform hover:scale-105">
+                    <img style="max-width: 20%; height: auto; display:block; margin: 0 auto; border-radius: 15px;" src="images/key.jpg" alt="Tool">
+                    <h3 class="text-2xl font-bold mb-2">Passwords</h3>
+                    <p class="mb-4">Tired of memorizing login site info?</p>
+                    <p class="mb-4">You can use this password safe app to store all your login site info and more!</p>
+                    <div class="flex justify-between">
+                        <a href="downloads/Passwords.apk" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors duration-300">Download</a>
+                        <button class="bg-gradient-to-r from-purple-500 to-pink-700 text-white px-4 py-2 rounded hover:from-pink-700 hover:to-purple-500 transition-colors duration-300 preview-button" data-modal="modal-passwords">Preview</button>
+                    </div>
+                </div>
+
+                <!-- Preview Modal for Passwords -->
+                <div id="modal-passwords" class="modal">
+                    <div class="modal-content">
+                        <button class="close-button">&times;</button>
+                        <button class="prev-button">&lsaquo;</button>
+                        <img src="images/passwords_preview1.jpg" alt="Preview 1">
+                        <button class="next-button">&rsaquo;</button>
+                    </div>
+                </div>
+                <!--  App2 -->
+                <div class="app bg-white p-6 rounded-lg shadow-lg transition transform hover:scale-105 flex flex-col justify-center h-full">
+                    <div class="text-center mt-4 mb-auto">
+                        <img style="max-width: 20%; height: auto; margin: 0 auto; border-radius: 15px;" src="images/quotes2.png" alt="Tool">
+                        <h3 class="text-2xl font-bold mb-2">Daily Quotes</h3>
+                        <p class="mb-4">mini Daily Quotes app.</p>
+                    </div>
+                    <div class="mt-auto flex justify-between">
+                        <a href="downloads/DailyQuotes.apk" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors duration-300">Download</a>
+                        <button class="bg-gradient-to-r from-purple-500 to-pink-700 text-white px-4 py-2 rounded hover:from-pink-700 hover:to-purple-500 transition-colors duration-300 preview-button" data-modal="modal-Daily_Quotes">Preview</button>
+                    </div>
+                </div>
+                
+                
+                
+
+                <!-- Preview Modal for modal for Daily_Quotes -->
+                <div id="modal-Daily_Quotes" class="modal">
+                    <div class="modal-content">
+                        <button class="close-button">&times;</button>
+                        <button class="prev-button">&lsaquo;</button>
+                        <img src="images/Daily_Quotes_preview1.jpg" alt="Preview 1">
+                        <button class="next-button">&rsaquo;</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="socials" class="category py-16 bg-white">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold mb-8 text-center text-purple-700">Socials</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Example App -->
+                <div class="app bg-gray-100 p-6 rounded-lg shadow-lg transition transform hover:scale-105">
+                    <img style="max-width: 20%; height: auto; display:block; margin: 0 auto; border-radius: 15px;" src="images/paper-plane.png" alt="Social">
+                    <h3 class="text-2xl font-bold mb-2">Social</h3>
+                    <p class="mb-4">Under development! <i class="fa-solid fa-clock fa-spin"></i></p>
+                    <div class="flex justify-between">
+                  <!--     <a href="#" class="bg-gradient-to-r from-purple-500 to-pink-700 text-white px-4 py-2 rounded hover:from-pink-700 hover:to-purple-500 transition-colors duration-300">Download</a>   -->
+                        <button class="bg-gradient-to-r from-purple-500 to-pink-700 text-white px-4 py-2 rounded hover:from-pink-700 hover:to-purple-500 transition-colors duration-300 preview-button" data-modal="modal-social">Preview</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Preview Modal for Social -->
+    <div id="modal-social" class="modal">
+        <div class="modal-content">
+            <button class="close-button">&times;</button>
+            <button class="prev-button">&lsaquo;</button>
+            <img src="images/social_preview1.png" alt="Preview 1">
+            <button class="next-button">&rsaquo;</button>
+        </div>
+    </div>
+    
+
+   <section id="education" class="category py-16 bg-gray-100">
+    <div class="container mx-auto">
+        <h2 class="text-4xl font-bold mb-8 text-center text-purple-700">Education</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- App1 -->
+            <div class="app bg-white p-6 rounded-lg shadow-lg transition transform hover:scale-105">
+                <img style="max-width: 20%; height: auto; display:block; margin: 0 auto; border-radius: 15px;" src="images/notebook.png" alt="Education">
+                <h3 class="text-2xl font-bold mb-2">Education</h3>
+                <p class="mb-4">To be released soon!</p>
+                <a href="https://eul38.github.io/Educate/" style="display: inline-block; background-color: red; color: white; padding: 5px 10px; border: none; border-radius: 4px; cursor: pointer; font-size: 14px; text-decoration: none; animation: glow 1.5s infinite;">Click Me</a>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 5px red;
+    }
+    50% {
+        box-shadow: 0 0 20px red;
+    }
+    100% {
+        box-shadow: 0 0 5px red;
+    }
+}
+</style>
+
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-purple-600 to-pink-400 text-white py-8">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2023 EyuApps. All rights reserved.</p>
+            <div class="social-links flex justify-center space-x-4 mt-4">
+                <a href="https://www.facebook.com/profile.php?id=61557995417592&mibextid=ZbWKwL" data-social="Facebook" style="--accent-color: #106bff;" class="social-link hover:text-gray-300">
+                    <i class="fab fa-facebook"></i> Facebook
+                </a>
+                <a href="https://twitter.com/eul4525" data-social="X" style="--accent-color: black;" class="social-link hover:text-gray-300">
+                    <i class="fab fa-twitter"></i> X
+                </a>
+                <a href="https://t.me/Eul_zzz" data-social="Telegram" style="--accent-color: #0088cc;" class="social-link hover:text-gray-300">
+                    <i class="fab fa-telegram"></i> Telegram
+                </a>
+            </div>
+            
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        document.getElementById('snake3-version').addEventListener('change', function() {
+            var selectedVersion = this.value;
+            document.getElementById('snake3-download-btn').href = selectedVersion;
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const previewButtons = document.querySelectorAll('.preview-button');
+            const modals = document.querySelectorAll('.modal');
+            const closeButtons = document.querySelectorAll('.close-button');
+            const nextButtons = document.querySelectorAll('.next-button');
+            const prevButtons = document.querySelectorAll('.prev-button');
+
+            const images = {
+                'modal-guess': [
+                    'images/guess_preview1.jpg',
+                    'images/guess_preview2.jpg',
+                    'images/guess_preview3.jpg'
+                ],
+                'modal-snake3': [
+                    'images/snake3_preview1.jpg',
+                    'images/snake3_preview2.jpg',
+                    'images/snake3_preview3.jpg',
+                    'images/snake3_preview4.jpeg'
+                ],
+                'modal-passwords': [
+                    'images/passwords_preview1.jpg',
+                    'images/passwords_preview2.jpg',
+                    'images/passwords_preview3.jpg'
+                ],
+        'modal-social': [
+            'images/social_preview1.jpg',
+                ],
+                'modal-rps': [
+                    'images/rps_preview1.jpg',
+                    'images/rps_preview2.jpg',
+                    'images/rps_preview4.jpg',
+                    'images/rps_preview3.jpg'
+                ],
+                'modal-Daily_Quotes': [
+                    'images/Daily_Quotes_preview1.jpg',
+                    'images/Daily_Quotes_preview2.jpg',
+                    'images/Daily_Quotes_preview3.jpg'       
+                ]
+                
+            };
+
+            previewButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const modalId = button.getAttribute('data-modal');
+                    const modal = document.getElementById(modalId);
+                    modal.classList.add('active');
+                    showImage(modal, 0);
+                });
+            });
+
+            closeButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    button.closest('.modal').classList.remove('active');
+                });
+            });
+
+            nextButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const modal = button.closest('.modal');
+                    showNextImage(modal);
+                });
+            });
+
+            prevButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const modal = button.closest('.modal');
+                    showPrevImage(modal);
+                });
+            });
+
+            window.addEventListener('click', function(event) {
+                modals.forEach(modal => {
+                    if (event.target === modal) {
+                        modal.classList.remove('active');
+                    }
+                });
+            });
+
+            function showImage(modal, index) {
+                const img = modal.querySelector('img');
+                const modalId = modal.getAttribute('id');
+                img.setAttribute('src', images[modalId][index]);
+                modal.setAttribute('data-index', index);
+            }
+
+            function showNextImage(modal) {
+                const index = parseInt(modal.getAttribute('data-index'));
+                const modalId = modal.getAttribute('id');
+                const nextIndex = (index + 1) % images[modalId].length;
+                showImage(modal, nextIndex);
+            }
+
+            function showPrevImage(modal) {
+                const index = parseInt(modal.getAttribute('data-index'));
+                const modalId = modal.getAttribute('id');
+                const prevIndex = (index - 1 + images[modalId].length) % images[modalId].length;
+                showImage(modal, prevIndex);
+            }
+        });
+    </script>
+    
+</body>
+</html>
